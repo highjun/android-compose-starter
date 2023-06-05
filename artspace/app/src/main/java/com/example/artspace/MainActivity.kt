@@ -143,8 +143,13 @@ fun DisplayController(onPreviousClick: () -> Unit, onNextClick: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun ArtSpacePreview() {
-    val sampleData: ImageData = ImageData(R.drawable.cat, "Cat", "Google Images", 2022)
+    val image_list = listOf<ImageData>(
+        ImageData(R.drawable.cat, "Cat", "Google Images", 2022),
+        ImageData(R.drawable.sky, "Sky", "Google Images", 2019),
+        ImageData(R.drawable.tiger1, "Tiger", "Google Images", 2014),
+        ImageData(R.drawable.mountain2, "Mountain", "Google Images", 2021)
+    )
     ArtspaceTheme {
-        ImageViewComponent(imageData = sampleData)
+        ArtSpaceScreen(image_list = image_list)
     }
 }
